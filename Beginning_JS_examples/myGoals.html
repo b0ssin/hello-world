@@ -18,17 +18,32 @@
       }
     </style>
     <title>Personal Goals</title>
-    <script type="text/javascript">
-      var d = new Date();
-      document.getElementById("demo").innerHTML = d.toDateString();
-    </script>
   </head>
   <body>
     <h1>My Goals</h1>
     <p id="demo"></p>
     <script type="text/javascript">
-      var d = new Date();
-      document.getElementById("demo").innerHTML = d.toDateString();
+      var greeting;
+      var nowDate = new Date();
+      var nowHour = nowDate.getHours();
+      var nowMinute = nowDate.getMinutes();
+      var nowSecond = nowDate.getSeconds();
+      if (nowMinute < 10) {
+        nowMinute = "0" + nowMinute;
+      }
+      if (nowSecond < 10) {
+        nowSecond = "0" + nowSecond;
+      }
+      if (nowHour < 12) {
+        greeting = "Good Morning";
+      } else if (nowHour < 17) {
+        greeting = "Good Afternoon";
+      } else {
+        greeting = "Good Evening";
+      }
+      document.write("<h4>" + greeting + " and welcome to my website</h4>");
+      document.write("According to your clock the time is ");
+      document.write(nowHour + ":" + nowMinute + ":" + nowSecond);
     </script>
     <ul>
       <li>Live a devoted life to Christ</li>
